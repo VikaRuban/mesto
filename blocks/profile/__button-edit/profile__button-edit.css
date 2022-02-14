@@ -1,0 +1,17 @@
+.profile__button-edit {
+  min-width: 18px;
+  min-height: 18px;
+  background-color: transparent;
+  border: none;
+  background-image: url(../../../images/pencil.svg);
+  background-repeat: no-repeat;
+}
+.profile__button-edit:hover {
+  opacity: 60%;
+}
+@media (min-width: 1280px) {
+  .profile__button-edit {
+    min-width: 24px;
+    min-height: 24px;
+  }
+}

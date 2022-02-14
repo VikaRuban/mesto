@@ -1,0 +1,13 @@
+.places {
+  margin: 0 19px;
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 20px;
+}
+@media (min-width: 1280px) {
+  .places {
+    margin: 0 200px;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 17px;
+  }
+}

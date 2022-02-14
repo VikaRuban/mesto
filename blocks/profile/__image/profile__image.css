@@ -1,0 +1,15 @@
+.profile__image {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-top: 38.25px;
+  margin-bottom: 22.25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1280px) {
+  .profile__image {
+    margin-top: 36.25px;
+    margin-bottom: 47.25px;
+  }
+}

@@ -1,0 +1,7 @@
+.places__place {
+  background-color: #FFFFFF;
+  min-height: 361px;
+  border-radius: 10px;
+  min-width: 282px;
+  width: 100%;
+}

@@ -1,0 +1,6 @@
+.profile__name-edit {
+  display: inline-flex;
+  align-items: baseline;
+  margin: 0 auto;
+  max-width: 500px;
+}
