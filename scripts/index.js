@@ -4,10 +4,10 @@ buttonSave.addEventListener('click', function () {
   let popupDescription = document.querySelector('.popup__description');
   let profileName = document.querySelector('.profile__name');
   let profileDescription = document.querySelector('.profile__description');
-  if (popupName.value !== ''){
+  if (popupName.value !== ' '){
   profileName.textContent = popupName.value;
     }
-  if (popupDescription.value !== '') {
+  if (popupDescription.value !== ' ') {
   profileDescription.textContent = popupDescription.value;
     }
     let popup = document.querySelector('.popup');
@@ -26,11 +26,3 @@ buttonProfileEdit.addEventListener('click', function () {
   popup.classList.add("popup_opened");
   }
 )
-
-/*
-let profileButton = document.querySelector('.profile__button');
-profileButton.addEventListener('click', function () {
-  let popup = document.querySelector('.popup');
-  popup.classList.add("popup_opened");
-  }
-)*/
