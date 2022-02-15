@@ -33,6 +33,7 @@
     margin-left: 200px;
     margin-right: 200px;
   }
+}
 @media (min-width: 1024px) and (max-width: 1280px) {
   .places {
     grid-template-columns: repeat(2, auto);
