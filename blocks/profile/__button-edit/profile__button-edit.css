@@ -5,6 +5,7 @@
   border: none;
   background-image: url(../../../images/pencil.svg);
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 .profile__button-edit:hover {
   opacity: 60%;

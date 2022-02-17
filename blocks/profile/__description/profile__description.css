@@ -1,17 +1,16 @@
 .profile__description {
-  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   margin: 0 19px;
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.21;
+  line-height: 17px;
   word-break: break-all;
   min-width: calc(100% - 38px);
 }
 @media (min-width: 1280px) {
   .profile__description {
     font-size: 18px;
-    line-height: 1.22;
+    line-height: 22px;
   }
 }

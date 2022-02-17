@@ -38,5 +38,7 @@
     height: 33px;
     padding-top: 45px;
     padding-bottom: 41px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

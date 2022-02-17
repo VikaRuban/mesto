@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="pages/index.css">
-    <title>Mesto</title>
+    <title>Место</title>
   </head>
   <body class="page"> 
     <header class="header">
@@ -16,67 +16,69 @@
         <div class="profile__info">
           <div class="profile__name-edit">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__button-edit"></button>
+            <button type="button" class="profile__button-edit" aria-label="Редактировать"></button>
           </div>
           <p class="profile__description">Исследователь океана</p>
         </div>
-        <button class="profile__button"></button>
+        <button  type="button" class="profile__button" aria-label="Добавить"></button>
       </section>
       <section class="places">
-        <div class="places__place">
+        <article class="places__place">
           <img class="places__image" src="./images/baikal.jpg" alt="Байкал"> 
           <div class="places__inscription">
-            <p class="places__title">Байкал</p>
-            <div class="places__like"></div>
+            <h2 class="places__title">Байкал</h2>
+            <button type="button" class="places__like"></button>
           </div>
-        </div>
-        <div class="places__place">
+        </article>
+        <article class="places__place">
           <img class="places__image" src="./images/araviiskoe.jpg" alt="Аравийское море"> 
           <div class="places__inscription">
-            <p class="places__title">Аравийское море</p>
-            <div class="places__like"></div>
+            <h2 class="places__title">Аравийское море</h2>
+            <button type="button" class="places__like"></button>
           </div>
-        </div>
-        <div class="places__place">
+        </article>
+        <article class="places__place">
           <img class="places__image" src="./images/dunai.jpg" alt="Река Дунай"> 
           <div class="places__inscription">
-            <p class="places__title">Река Дунай</p>
-            <div class="places__like"></div>
+            <h2 class="places__title">Река Дунай</h2>
+            <button type="button" class="places__like"></button>
           </div>
-        </div>
-        <div class="places__place">
+        </article>
+        <article class="places__place">
           <img class="places__image" src="./images/azorskie.jpg" alt="Азорские острова"> 
           <div class="places__inscription">
-            <p class="places__title">Азорские острова</p>
-            <div class="places__like"></div>
+            <h2 class="places__title">Азорские острова</h2>
+            <button type="button" class="places__like"></button>
           </div>
-        </div>
-        <div class="places__place">
+        </article>
+        <article class="places__place">
           <img class="places__image" src="./images/kaspiiskoe.jpg" alt="Каспийское море">
           <div class="places__inscription">
-            <p class="places__title">Каспийское море</p>
-            <div class="places__like"></div>
+            <h2 class="places__title">Каспийское море</h2>
+            <button type="button" class="places__like"></button>
           </div>
-        </div>
-        <div class="places__place">
+        </article>
+        <article class="places__place">
           <img class="places__image" src="./images/madagaskar.jpg" alt="Остров Мадагаскар"> 
           <div class="places__inscription">
-            <p class="places__title">О. Мадагаскар</p>
-            <div class="places__like"></div>
+            <h2 class="places__title">О. Мадагаскар</h2>
+            <button type="button" class="places__like"></button>
           </div>
-        </div>
+        </article>
       </section>
     </main>
     <footer class="footer">
-      <p class="footer__copyright">© 2022 Mesto Russia</p> 
+      <p class="footer__copyright">&#169; 2022 Mesto Russia</p> 
     </footer>
     <div class="popup">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input type="text" class="popup__name" placeholder="Имя">
-        <input type="text" class="popup__description" placeholder="О себе">
-        <button class="popup__button-save">Сохранить</button>
-        <button class="popup__button-exit"></button>
+        <form name="profile">
+          <input type="text" class="popup__name" name="name" placeholder="Имя">
+          <input type="text" class="popup__description" name="description" placeholder="О себе">
+          <button  type="submit" class="popup__button-save">Сохранить</button>
+          <button  type="button" class="popup__button-exit" aria-label="Закрыть"></button>
+        </form>
       </div>
     </div>
     <script src="./scripts/index.js"></script>

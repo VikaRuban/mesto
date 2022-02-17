@@ -1,17 +1,31 @@
 .places__title {
-  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   color: #000000;
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 29px;
   font-style: normal;
-  padding-left: 21px;
+  padding-left: 25px;
   padding-right: 0;
-  padding-top: 25px;
+  padding-top: 21px;
   padding-bottom: 31px;
   white-space: nowrap;
   text-overflow: ellipsis;
-  min-width: 200px;
   overflow: hidden;
   margin: 0;
+  max-width: 200px;
+}
+@media (min-width: 480px) and (max-width: 640px) {
+  .places__title {
+    max-width: 240px;
+  }
+}
+@media (min-width: 640px) and (max-width: 768px) {
+  .places__title {
+    max-width: 300px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .places__title {
+    max-width: 200px;
+  }
 }

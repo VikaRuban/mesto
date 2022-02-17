@@ -27,5 +27,10 @@
   .footer {
     padding-top: 67px;
     padding-bottom: 60px;
+    max-width: 880px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -1,5 +1,4 @@
 .profile__name {
-  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   margin: 0 19px;
   margin-top: 0;
   margin-bottom: 0;
@@ -9,14 +8,14 @@
   font-size: 27px;
   font-weight: 500;
   font-style: normal;
-  line-height: 1.21;
+  line-height: 33px;
   padding-bottom: 14px;
   word-break: break-all;
 }
 @media (min-width: 1280px) {
   .profile__name {
     font-size: 42px;
-    line-height: 1.14;
+    line-height: 48px;
     margin-right: 18px;
   }
 }
