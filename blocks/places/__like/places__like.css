@@ -3,13 +3,15 @@
   height: 19px;
   margin-left: 1px;
   margin-right: 20px;
-  margin-top: 21px;
-  margin-bottom: 25.82px;
+  margin-top: 25px;
+  margin-bottom: 31px;
   background-image: url(../../../images/like.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+  padding: 0;
 }
 .places__like:hover {
   opacity: 50%;
