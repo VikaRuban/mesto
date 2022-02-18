@@ -4,6 +4,6 @@
   border-radius: 10px;
   min-width: 282px;
   width: 100%;
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
