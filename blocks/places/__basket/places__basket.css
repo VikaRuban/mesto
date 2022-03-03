@@ -1,0 +1,16 @@
+.places__basket {
+  width: 18px;
+  height: 19px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-image: url(../../../images/basket.svg);
+}
+.places__basket:hover {
+  filter: grayscale(0.5) invert(27%) ;
+}
