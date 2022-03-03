@@ -12,5 +12,5 @@
   background-image: url(../../../images/basket.svg);
 }
 .places__basket:hover {
-  filter: grayscale(0.5) invert(27%) ;
+  filter: grayscale(0.5) invert(27%);
 }
