@@ -103,7 +103,7 @@ function popupOpen() {
 
 /*-----------------------------------------попап НОВОЕ МЕСТО-------------------------------------------------------------------------------------------------*/
 
-const popupNewplace = document.querySelector('.popup__newplace');
+const popupNewplace = document.querySelector('.popup-newplace');
 const buttonNewplace = document.querySelector('.profile__button');
 const placeTitle = document.querySelector('.places__title');
 const placeLink = document.querySelector('.places__image');
@@ -149,7 +149,7 @@ function adNewplace(e) { /*добавление инфы*/
 formPlace.addEventListener("submit", adNewplace); /*сохранение инфы*/
 
 /*-----------------------попап УВЕЛИЧЕНИЕ КАРТИНКИ-----------------------------------------*/
-const popupImagemagnify = document.querySelector('.popup__image-magnify');
+const popupImagemagnify = document.querySelector('.popup-image');
 const images = document.querySelectorAll('.places__image'); 
 const buttonImage = document.querySelector('.popup__button-image');
 function magnifyImage() { 
