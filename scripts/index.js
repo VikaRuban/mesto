@@ -29,33 +29,30 @@ const initialCards = [
 
 const placeWrapper = document.querySelector('.places');
 const placeTemplate = document.querySelector('#place').content;
-
 const imageOfPopup = document.querySelector('.popup__image');
 const titleOfImage = document.querySelector('.popup__image-title');
 
 function createCard(item) {
   const cardElement = placeTemplate.querySelector('.places__place').cloneNode(true); // клонируем содержимое тега template
   cardElement.querySelector('.places__title').textContent = item.name;
-  cardElement.querySelector('.places__image').src = item.link;
-  cardElement.querySelector('.places__image').alt = item.name;
+  const placesImage = cardElement.querySelector('.places__image');
+  placesImage.src = item.link;
+  placesImage.alt = item.name;
 
   // Удаление карточки
   const basket = cardElement.querySelector('.places__basket');
   basket.addEventListener('click', (e) => {
-    e.stopPropagation();
     cardElement.remove();
   });
 
   // Лайк
   const like = cardElement.querySelector('.places__like'); 
   like.addEventListener('click', (e) => {
-    e.stopPropagation();
     like.classList.toggle('places__like_active');
   });
 
   // Увеличение картинки
-  cardElement.addEventListener('click', (e) => {
-    e.stopPropagation();
+  placesImage.addEventListener('click', (e) => {
     openPopup(popupImagemagnify);
     imageOfPopup.src = item.link;
     titleOfImage.textContent = item.name;
@@ -92,6 +89,7 @@ function adNewplace(e) { // добавление инфы
   closePopup(popupNewplace);
   const newCard = createCard({name: namePlace.value, link: imagePlace.value});
   placeWrapper.prepend(newCard);
+  formPlace.reset();
 }
 formPlace.addEventListener("submit", adNewplace); // сохранение инфы
 
@@ -99,7 +97,6 @@ formPlace.addEventListener("submit", adNewplace); // сохранение инф
 const popupNewplace = document.querySelector('.popup-newplace');
 const buttonNewplace = document.querySelector('.profile__button');
 const placeTitle = document.querySelector('.places__title');
-const placeLink = document.querySelector('.places__image');
 const popupNameNewplace = document.querySelector('.popup__name-newplace');
 const popupLinkimage = document.querySelector('.popup__linkimage');
 const buttonExitNewplace = document.querySelector('.popup__button-exitnewplace');
