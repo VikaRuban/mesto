@@ -1,5 +1,5 @@
 const getErrorElement = (inputElement) => {
-  return inputElement.closest('.popup__form-section').querySelector('.popup__input_error');
+  return inputElement.closest('.popup__form-section').querySelector('.popup__input-error');
 };
 
 const showError = (formElement, inputElement, errorMessage) => {
