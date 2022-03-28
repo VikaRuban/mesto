@@ -41,9 +41,15 @@
     <div class="popup popup-profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="form-profile" name="profile">
-          <input type="text" class="popup__name" name="name" placeholder="Имя">
-          <input type="text" class="popup__description" name="description" placeholder="О себе">
+        <form class="popup__form form-profile" name="profile" novalidate>
+          <section class="popup__form-section">
+            <input type="text" class="popup__input popup__name " name="name" placeholder="Имя" minlength="2" maxlength="40" required>
+            <span class ="popup__input_error"></span>
+          </section>
+          <section class="popup__form-section">
+            <input type="text" class="popup__input popup__description" name="description" placeholder="О себе" minlength="2" maxlength="200" required>
+            <span class ="popup__input_error"></span>
+          </section>
           <button  type="submit" class="popup__button-save">Сохранить</button>
           <button  type="button" class="popup__button-exit" aria-label="Закрыть"></button>
         </form>
@@ -52,9 +58,15 @@
     <div class="popup popup-newplace">
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
-        <form class="form-place" name="newplace">
-          <input type="text" class="popup__name popup__name-newplace" name="name" placeholder="Название">
-          <input type="text" class="popup__description popup__linkimage" name="description" placeholder="Ссылка на картинку">
+        <form class="popup__form form-place" name="newplace" novalidate>
+          <section class="popup__form-section">
+            <input type="text" class="popup__input popup__name-newplace" name="name" placeholder="Название" minlength="2" maxlength="30" required>
+            <span class ="popup__input_error"></span>
+          </section>
+          <section class="popup__form-section">
+            <input type="url" class="popup__input popup__linkimage" name="description" placeholder="Ссылка на картинку" required>
+            <span class ="popup__input_error"></span>
+          </section>
           <button  type="submit" class="popup__button-save">Создать</button>
           <button  type="button" class="popup__button-exit popup__button-exitnewplace" aria-label="Закрыть"></button>
         </form>
@@ -64,11 +76,10 @@
       <div class="popup__container popup__container-image">
         <img class="popup__image" alt="Изображение места"> 
         <h2 class="popup__image-title"></h2>
-        <form class="form-image" name="image">
-          <button  type="button" class="popup__button-exit popup__button-image" aria-label="Закрыть"></button>
-        </form>
+        <button  type="button" class="popup__button-exit popup__button-image" aria-label="Закрыть"></button>
       </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>

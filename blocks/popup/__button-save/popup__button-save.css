@@ -1,6 +1,6 @@
 .popup__button-save {
   background-color: black;
-  color: white;
+  color: #FFFFFF;
   font-size: 14px;
   font-weight: 400;
   font-style: normal;
@@ -13,13 +13,19 @@
   margin-right: 22px;
   margin-top: 45px;
   margin-bottom: 25px;
-  border: none;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 2px;
   cursor: pointer;
 }
 .popup__button-save:hover {
   opacity: 80%;
 }
+/*.popup__button-save:valid {
+  background-color: black;
+  color: white;
+  border: none;
+}*/
+
 @media (min-width: 1280px) {
   .popup__button-save {
     width: 358px;

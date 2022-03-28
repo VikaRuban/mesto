@@ -148,3 +148,53 @@ const buttonImage = document.querySelector('.popup__button-image');
 buttonImage.addEventListener('click', () => {
   closePopup(popupImagemagnify);
 });
+
+
+//--------------Закрытие на оверлее-----------
+const popups = document.querySelectorAll('.popup');
+
+popups.forEach(function(popup) {
+  const popupWrapper = popup.querySelector('.popup__container');
+  popupWrapper.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+  popup.addEventListener('click', () => {
+    closePopup(popup);
+   });
+});
+
+
+
+
+
+/*Сабмит и кнопка закрытия вложены в оверлей, поэтому сначала слушатель срабатывает на них, потом на родителе. 
+А если ты кликаешь на родителе, то только его слушатель срабатывает, соответственно. Все элементы, вложенные в оверлей, будут вызывать его событие клика, 
+в т.ч. контейнер, но для избежания закрытия в функции есть проверка, на кого было кликнуто (отредактировано)*/
+
+
+
+
+ //----------Закрытие попапов на ESC--------
+document.addEventListener('keydown', function(event){
+  if (event.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    if (popupOpened) {
+      closePopup(popupOpened);
+    }
+  }
+});
+
+
+/*const popupOpened = document.querySelector('.popup_opened');
+popupOpened.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePopup();
+    }
+  });*/
+
+
+//Надо найти popup__opened через queryselector как обычно,  и передать эту переменную в функцию closepopup. Массив и перебор не надо
+
+  /*По заданию надо, чтобы слушатель вешался на открытие попапа и убирался на закрытие попапа.
+*/
+  
