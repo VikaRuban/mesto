@@ -55,6 +55,7 @@ function createCard(item) {
   placesImage.addEventListener('click', (e) => {
     openPopup(popupImagemagnify);
     imageOfPopup.src = item.link;
+    imageOfPopup.alt = item.name;
     titleOfImage.textContent = item.name;
   });
   return cardElement;
@@ -69,29 +70,38 @@ initialCards.forEach(function(item) {
 //-------------Общие функции попапов---------------------------
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEscape); 
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEscape); 
 }
 
 //-------------Добавление карточки НОВОЕ МЕСТО------------------
 const formPlace = document.querySelector('.form-place');
 const namePlace = formPlace.querySelector('.popup__name-newplace');
 const imagePlace = formPlace.querySelector('.popup__linkimage');
+const submitButton = formPlace.querySelector('.popup__button-save');
 
 function adNewplace(e) { // добавление инфы
   e.preventDefault();
   if (namePlace.value === '' || imagePlace.value === '') {
     return;
   }
-  
   closePopup(popupNewplace);
   const newCard = createCard({name: namePlace.value, link: imagePlace.value});
   placeWrapper.prepend(newCard);
   formPlace.reset();
+  disableInput();
 }
 formPlace.addEventListener("submit", adNewplace); // сохранение инфы
+
+//-------disabled --------------------------------------------------
+function disableInput() {
+  submitButton.classList.add('popup__button-save_inactive');
+  submitButton.setAttribute('disabled', true);
+}
 
 //---------------попап НОВОЕ МЕСТО---------------------------------
 const popupNewplace = document.querySelector('.popup-newplace');
@@ -163,27 +173,27 @@ popups.forEach(function(popup) {
    });
 });
 
+ //----------Закрытие попапов на ESC--------
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened'); 
+    closePopup(popupOpened);
+  }
+}
 
 
 
+
+
+
+
+
+
+//--------мои_заметки-------
 
 /*Сабмит и кнопка закрытия вложены в оверлей, поэтому сначала слушатель срабатывает на них, потом на родителе. 
 А если ты кликаешь на родителе, то только его слушатель срабатывает, соответственно. Все элементы, вложенные в оверлей, будут вызывать его событие клика, 
 в т.ч. контейнер, но для избежания закрытия в функции есть проверка, на кого было кликнуто (отредактировано)*/
-
-
-
-
- //----------Закрытие попапов на ESC--------
-document.addEventListener('keydown', function(event){
-  if (event.key === 'Escape') {
-    const popupOpened = document.querySelector('.popup_opened');
-    if (popupOpened) {
-      closePopup(popupOpened);
-    }
-  }
-});
-
 
 /*const popupOpened = document.querySelector('.popup_opened');
 popupOpened.addEventListener('keydown', function(e) {
@@ -192,9 +202,45 @@ popupOpened.addEventListener('keydown', function(e) {
     }
   });*/
 
-
 //Надо найти popup__opened через queryselector как обычно,  и передать эту переменную в функцию closepopup. Массив и перебор не надо
 
-  /*По заданию надо, чтобы слушатель вешался на открытие попапа и убирался на закрытие попапа.
-*/
+ //По заданию надо, чтобы слушатель вешался на открытие попапа и убирался на закрытие попапа.
+
+
+
+ //-------ДОРАБОТКИ------
+ /*buttonExitNewplace.addEventListener('click', () => { 
+  Если будет интересно, посмотрите, как можно объединить обработчики оверлея и крестиков:
+    const popups = document.querySelectorAll('.popup')
   
+        popups.forEach((popup) => {
+            popup.addEventListener('mousedown', (evt) => {
+                if (evt.target.classList.contains('popup_opened')) {
+                    closePopup(popup)
+                }
+            })
+        }) 
+  Для этого как раз и создаются универсальные классы для элементов (в данном случае класс popup).
+  Находим все попапы в проекте и пробегаемся по ним, навешивая обработчик.
+  А вот еще магия общих классов:
+   if (evt.target.classList.contains('popup__close')) {
+                  closePopup(popup)
+                } 
+  Можно добавить проверку, нажали на крестик или нет,  и закрывать попап.
+  У крестика тоже универсальный класс popup__close 
+  И теперь можно удалить кучу ненужного кода, который обрабатывал клики по кнопкам крестиков, сам поиск этих кнопок вверху файла и тд. Добавляйте хоть 100 попапов - код будет работать для всех.
+   const popups = document.querySelectorAll('.popup')
+  
+        popups.forEach((popup) => {
+            popup.addEventListener('mousedown', (evt) => {
+                if (evt.target.classList.contains('popup_opened')) {
+                    closePopup(popup)
+                }
+                if (evt.target.classList.contains('popup__close')) {
+                  closePopup(popup)
+                }
+            })
+        })
+   
+  Обратите внимание, что нужно использовать событие 'mousedown', а не click, чтобы не закрыть случайно попап по оверлею, если нажать мышкой внутри попапа, а потом, не разжимая, передвинуть курсор на оверлей. Такой баг появляется с событием click.
+  */
